@@ -2,7 +2,6 @@ package ipwhoisserver // import "cirello.io/ipwhois/ipwhoisserver"
 
 import (
 	"context"
-	"fmt"
 	"strings"
 	"sync"
 	"time"
@@ -58,7 +57,6 @@ func Serve(ctx context.Context, reqs <-chan *Query) {
 		}
 		req := req
 		go func() {
-			fmt.Println("got", req.IP)
 			normalizedQuery := strings.TrimSpace(req.IP)
 			mu.RLock()
 			cached, ok := cacheTable[normalizedQuery]
