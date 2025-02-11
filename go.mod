@@ -1,6 +1,6 @@
 module cirello.io/ipwhois
 
-go 1.17
+go 1.23
 
 require (
 	golang.org/x/sync v0.5.0
